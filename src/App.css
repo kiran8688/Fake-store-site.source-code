@@ -1,38 +1,167 @@
+/* .navbar{
+    display: flex;
+    background-color: #830a2c;
+    color: #c6b279;
+    text-align: center;
+    align-items: center;
+}
+.navbar > .nav-links{
+    width: 60vw;
+}
+.nav-links> .nav-item{
+    font-size: 110%;
+    margin: 0.5%;
+    text-decoration: none;
+    color: #c6b279;
+    padding: 2% 2% 1.3% 2%;
+}
+.nav-links > .nav-item:hover{
+    background-color: rgba(0,0,0,0.1);
+    color: #f3d684;
+
+}
+.navbar > .nav-name{
+    font-size: 170%;
+    padding: 0.4%;
+    font-style: italic;
+    font-weight: 500;
+    width: 40vw;
+} */
+
 .App {
-  text-align: center;
+    margin: 0px;
+    padding: 0px;
+    /* color: black; */
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#bgcol {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 82vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#contain {
+    background-image: url(https://images.pexels.com/photos/9726015/pexels-photo-9726015.jpeg);
+    /* https://images.pexels.com/photos/301930/pexels-photo-301930.jpeg */
+    /* https://images.pexels.com/photos/4027948/pexels-photo-4027948.jpeg */
+    /* https://images.pexels.com/photos/6758281/pexels-photo-6758281.jpeg */
+    /* https://images.pexels.com/photos/11395484/pexels-photo-11395484.jpeg */
+    /* https://images.pexels.com/photos/7912829/pexels-photo-7912829.jpeg */
+    /* https://images.pexels.com/photos/2954412/pexels-photo-2954412.jpeg */
+    /* https://images.pexels.com/photos/2781582/pexels-photo-2781582.jpeg */
+    /* https://images.pexels.com/photos/3937645/pexels-photo-3937645.jpeg */
+    /* https://images.pexels.com/photos/2070026/pexels-photo-2070026.jpeg */
+    /* https://images.pexels.com/photos/5356273/pexels-photo-5356273.jpeg */
+    /* https://images.pexels.com/photos/6600511/pexels-photo-6600511.jpeg */
+    /* https://images.pexels.com/photos/9726015/pexels-photo-9726015.jpeg */
+    background-repeat: inherit;
+    background-size: cover;
+    height: 82vw;
+    /* position: fixed; */
+    /* width: 100vw; */
+    /* bottom: 10%; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* .mdc-tab-bar{
+    color: brown ;
+    border-color: crimson;
+} */
+.css-1aquho2-MuiTabs-indicator {
+    /* color: brown !important; */
+    height: 6px !important;
+    background-color: orange !important;
+    border-radius: 5px 5px 0px 0px;
+
 }
 
-.App-link {
-  color: #61dafb;
+.css-10d9dml-MuiTabs-indicator {
+    width: 6px !important;
+    background-color: brown !important;
+    border-radius: 5px 0px 0px 5px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Mui-selected {
+    color: black !important;
+    font-weight: 500 !important;
+}
+
+.btncard {
+    /* position: fixed; */
+    z-index: 1;
+}
+
+.cardcont {
+    overflow-y: scroll;
+    /* padding-left: 10%; */
+    /* scroll-margin-left: 50px; */
+}
+
+html::-webkit-scrollbar {
+    width: 0.3vw;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar:hover {
+    width: 1vh
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255);
+}
+
+html::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(124, 123, 123, 0.7);
+}
+
+html::-webkit-scrollbar-track:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cardcont::-webkit-scrollbar {
+    width: 0.3vw;
+    margin-left: 10px;
+    scroll-behavior: smooth;
+}
+
+.cardcont::-webkit-scrollbar-button {
+    border-radius: 50px;
+}
+
+.cardcont::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255);
+}
+
+.cardcont::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cardcont::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+
+
+}
+
+.cardcont::-webkit-scrollbar-track:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+
+.anchver:hover {
+    color: rgba(0, 0, 0, 1);
+    text-decoration: underline;
+}
+
+/* div > link:hover{
+    color: rgba(0, 0, 0, 1);
+    text-decoration:underline;
+} */
+.anchver {
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
 }
