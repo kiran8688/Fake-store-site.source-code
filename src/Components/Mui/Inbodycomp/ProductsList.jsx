@@ -13,7 +13,7 @@ import Electronics from './Electronics';
 import Jewelery from './Jewelary';
 import Mens from './Mens';
 import Womens from './Womens';
-
+import Bar from '../Bar';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -72,7 +72,9 @@ export default function ProductsList() {
     })
     console.log(setShop);
   }, [])
-
+  const axiosHandler = (category) =>{
+    console.log(category);
+}
 
   //   const [mystate, setMyState] = useState([])
   //   const [anError, setAnError] = useState('')
@@ -106,10 +108,10 @@ export default function ProductsList() {
 
           sx={{ borderRight: 1, borderColor: 'divider', display: 'flex', width: '15vw', paddingY: 8, whiteSpace: 'nowrap', paddingX: 0 }}
         >
-          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Electronics" to={'electronics'} component={Link} {...a11yProps(0)} />
-          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Jewelery" to={'jewelary'} component={Link} {...a11yProps(1)} />
-          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Men's clothing" to={'mens'} component={Link} {...a11yProps(2)} />
-          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Women's clothing" to={'womens'} component={Link} {...a11yProps(3)} />
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Electronics" to={'electronics'} component={Link} onClick={()=> {axiosHandler('electronics')}} {...a11yProps(0)} />
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Jewelery" to={'jewelary'} component={Link} onClick={()=> {axiosHandler('jewelary')}} {...a11yProps(1)} />
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Men's clothing" to={'mens'} component={Link} onClick={()=> {axiosHandler('mens')}} {...a11yProps(2)} />
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Women's clothing" to={'womens'} component={Link} onClick={()=> {axiosHandler('womens')}} {...a11yProps(3)} />
         </Tabs>
         <Container className='cardcont' maxWidth={'lg'} sx={{ marginRight: '0px !important', width: '67vw !important ' }}>
 

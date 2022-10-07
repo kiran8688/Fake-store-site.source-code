@@ -34,10 +34,7 @@ export default function App() {
 <Routes>
             <Route path='/categories'>
               <Route index element={<ProductsList/>}/>
-              <Route path='/categories/electronics' element={<Electronics/>}/>
-              <Route path='/categories/jewelary' element={<Jewelary/>}/>
-              <Route path='/categories/mens' element={<Mens/>}/>
-              <Route path='/categories/womens' element={<Womens/>}/>
+              
             </Route>
             <Route path='/product' element={ <ProductDetails /> }/>
             <Route path='/profile' element={ <Profile/> }/>
