@@ -59,12 +59,13 @@ export default function ProductsList() {
 
   // -----------------------------------------------API call (axios)------------------------------------------------------------------------------------
 
-
+const [param, setParam] = useState('products/')
 
   const [Shop, setShop] = useState([]);
   useEffect(() => {
+    //  let cat = category != null ? category : ''
     axios
-    .get('https://fakestoreapi.com/products/category/electronics')
+    .get(`https://fakestoreapi.com/${param}`)
     .then((res) => {
 
       setShop(res.data)
@@ -73,10 +74,41 @@ export default function ProductsList() {
       console.log(res.data);
 
     })
-  }, [])
-  const axiosHandler = (category) =>{
-    console.log(category);
-}
+  }, [param])
+
+
+
+  var cardrender = Shop.map((product, index) =>{
+
+
+
+
+    return(
+      <Cardcomp 
+      key= {Shop[index].id}
+      name = {Shop[index].title}
+      price = {Shop[index].price}
+      details = {Shop[index].description}
+      cat = {Shop[index].category}
+      img = {Shop[index].image}
+      ratingStar = {Shop[index].rating.rate}
+      ratingacc = {Shop[index].rating.rate}
+      ratingCount = {Shop[index].rating.count}
+
+      />
+    )
+   
+
+
+  })
+
+
+
+//   const axiosHandler = (category) =>{
+//     console.log(category);
+//     setParam(category)
+//     console.log(setParam);
+// }
 
   //   const [mystate, setMyState] = useState([])
   //   const [anError, setAnError] = useState('')
@@ -110,22 +142,23 @@ export default function ProductsList() {
 
           sx={{ borderRight: 1, borderColor: 'divider', display: 'flex', width: '15vw', paddingY: 8, whiteSpace: 'nowrap', paddingX: 0 }}
         >
-          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Electronics" {...a11yProps(0)} />
-          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Jewelery"  {...a11yProps(1)} />
-          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Men's clothing"  {...a11yProps(2)} />
-          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Women's clothing"  {...a11yProps(3)} />
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Electronics" onClick={()=> {setParam('products/category/electronics')}} {...a11yProps(0)} />
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Jewelery" onClick={()=> {setParam('products/category/jewelery')}} {...a11yProps(1)} />
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Men's clothing" onClick={()=> {setParam("products/category/men's%20clothing")}} {...a11yProps(2)} />
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Women's clothing" onClick={()=> {setParam("products/category/women's%20clothing")}} {...a11yProps(3)} />
         </Tabs>
         <Container className='cardcont' maxWidth={'lg'} sx={{ marginRight: '0px !important', width: '67vw !important ' }}>
 
           {/* <TabScrollButton direction='right' orientation='vertical'/> */}
           {/* <Cardcomp imf={shop[0].image}/> */}
-          <Cardcomp photo={Shop[0].image}/>
+          {/* <Cardcomp photo={Shop[0].image}/> */}
+          {cardrender}
         </Container>
       </Box>
     </Container>
   );
 }
-// to={'electronics'} component={Link} onClick={()=> {axiosHandler('electronics')}}
-// to={'jewelary'} component={Link} onClick={()=> {axiosHandler('jewelary')}}
-// to={'mens'} component={Link} onClick={()=> {axiosHandler('mens')}}
-// to={'womens'} component={Link} onClick={()=> {axiosHandler('womens')}}
+// to={'electronics'} component={Link} 
+// to={'jewelary'} component={Link} 
+// to={'mens'} component={Link} 
+// to={'womens'} component={Link} 
