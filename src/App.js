@@ -9,7 +9,7 @@ import ContactUs from './Components/Mui/Inbodycomp/ContactUs';
 import Login from './Components/Mui/Inbodycomp/Login';
 import SignUp from './Components/Mui/Inbodycomp/SignUp';
 import Foot from './Components/Mui/Foot';
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+// import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Electronics from './Components/Mui/Inbodycomp/Electronics';
 import Jewelary from './Components/Mui/Inbodycomp/Jewelary';
 import Mens from './Components/Mui/Inbodycomp/Mens';
@@ -23,29 +23,28 @@ export default function App() {
         <Box id='bgcol'>
 
           <Bar />
-          <Routes>
+          {/* <Routes> */}
 
 
-          <Route path='/' element={<Welcome/> }/>  
-          </Routes>
+          {/* <Route path='/' element={<Welcome/> }/>   */}
+          {/* </Routes> */}
           
           <Container maxWidth="xl" >
-            
-<Routes>
-            <Route path='/categories'>
-              <Route index element={<ProductsList/>}/>
-              
-            </Route>
-            <Route path='/product' element={ <ProductDetails /> }/>
-            <Route path='/profile' element={ <Profile/> }/>
-            <Route path='/contact' element={ <ContactUs/> }/>
-          </Routes>
-          </Container>
-          <Routes>
 
-          <Route path='/login' element={ <Login/>} />
-          <Route path='/signup' element={<SignUp/> }/>
-          </Routes>
+            <ProductsList/>
+            
+{/* <Routes> */}
+            {/* <Route path='/categories' element={<ProductsList/>}/> */}
+            {/* <Route path='/product' element={ <ProductDetails /> }/> */}
+            {/* <Route path='/profile' element={ <Profile/> }/> */}
+            {/* <Route path='/contact' element={ <ContactUs/> }/> */}
+          {/* </Routes> */}
+          </Container>
+          {/* <Routes> */}
+
+          {/* <Route path='/login' element={ <Login/>} /> */}
+          {/* <Route path='/signup' element={<SignUp/> }/> */}
+          {/* </Routes> */}
             <Foot/>
         </Box>
       </Box>

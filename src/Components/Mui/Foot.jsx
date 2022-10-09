@@ -16,15 +16,15 @@ import LocalPhoneTwoToneIcon from '@mui/icons-material/LocalPhoneTwoTone';
 import HelpCenterTwoToneIcon from '@mui/icons-material/HelpCenterTwoTone';
 import { Stack, IconButton } from '@mui/material'
 
-import { Link, Route, Routes, BrowserRouter, NavLink } from 'react-router-dom';
+// import { Link, Route, Routes, BrowserRouter, NavLink } from 'react-router-dom';
 
 function Copyright() {
     return (
         <Typography variant="body2" color="text.secondary">
             {'Copyright © '}
-            <Link color="inherit" href="https://github.com/kiran8688">
+            {/* <Link color="inherit" href="https://github.com/kiran8688">
                 Kiran8688
-            </Link>{' '}
+            </Link>{' '} */}
             {new Date().getFullYear()}
             {'.'}
         </Typography>
@@ -127,10 +127,10 @@ export default function Foot() {
 
                                     <Typography variant='subtitle1' component={'div'} sx={{ lineHeight: 2.5, fontSize: 17, whiteSpace: 'nowrap' }} >
 
-                                        <Link className='anchver' href='#' component={Link} >Electronics</Link><br />
+                                        {/* <Link className='anchver' href='#' component={Link} >Electronics</Link><br />
                                         <Link className='anchver' href='#' component={Link} >Jewelery</Link><br />
                                         <Link className='anchver' href='#' component={Link} >Men's clothings</Link><br />
-                                        <Link className='anchver' href='#' component={Link} >Women's clothing</Link>
+                                        <Link className='anchver' href='#' component={Link} >Women's clothing</Link> */}
                                     </Typography>
 
                                 </Grid>
@@ -141,10 +141,10 @@ export default function Foot() {
                                     <Typography variant='subtitle1' component={'div'} sx={{ color: 'rgb(255,0,0)' }}>___________ </Typography>
 
                                     <Typography variant='subtitle1' component={'div'} sx={{ lineHeight: 2.5, fontSize: 17, whiteSpace: 'nowrap' }}>
-                                        <Link className='anchver' to={'/profile'} component={Link} >Your Account</Link><br />
+                                        {/* <Link className='anchver' to={'/profile'} component={Link} >Your Account</Link><br />
                                         <Link className='anchver' to={'/login'} component={Link} >Login</Link><br />
                                         <Link className='anchver' to={'/signup'} component={Link} >Sign Up</Link><br />
-                                        <Link className='anchver' href='#' component={'a'} > API</Link>
+                                        <Link className='anchver' href='#' component={'a'} > API</Link> */}
                                     </Typography>
 
                                 </Grid>
@@ -163,7 +163,7 @@ export default function Foot() {
                                         <Button variant='text' color='inherit' size='l' disableElevation disableRipple startIcon={<LocalPhoneTwoToneIcon color='warning' fontSize='large' />}>
                                             +91 8099951768
                                         </Button><br />
-                                        <Button variant='text' color='inherit' size='l' to={'/contact'} component={NavLink} disableElevation disableRipple startIcon={<HelpCenterTwoToneIcon color='warning' fontSize='large' />}>
+                                        <Button variant='text' color='inherit' size='l' disableElevation disableRipple startIcon={<HelpCenterTwoToneIcon color='warning' fontSize='large' />}>
                                             Contact Us
                                         </Button>
                                     </Typography>
@@ -183,3 +183,4 @@ export default function Foot() {
         </Box>
     );
 }
+// to={'/contact'} component={NavLink}

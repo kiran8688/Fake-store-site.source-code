@@ -7,13 +7,13 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Cardcomp from './Cardcomp';
 import { Container, TabScrollButton } from '@mui/material';
-import axios, { Axios } from 'axios';
-import { json, Link } from 'react-router-dom';
-import Electronics from './Electronics';
-import Jewelery from './Jewelary';
-import Mens from './Mens';
-import Womens from './Womens';
-import Bar from '../Bar';
+import axios from 'axios';
+// import { json, Link } from 'react-router-dom';
+// import Electronics from './Electronics';
+// import Jewelery from './Jewelary';
+// import Mens from './Mens';
+// import Womens from './Womens';
+// import Bar from '../Bar';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -61,16 +61,18 @@ export default function ProductsList() {
 
 
 
-  const [shop, setShop] = useState([]);
+  const [Shop, setShop] = useState([]);
   useEffect(() => {
-    axios.get('https://fakestoreapi.com/products').then((res) => {
+    axios
+    .get('https://fakestoreapi.com/products/category/electronics')
+    .then((res) => {
 
       setShop(res.data)
+      // console.log(setShop);
 
-      // console.log(res.data);
+      console.log(res.data);
 
     })
-    console.log(setShop);
   }, [])
   const axiosHandler = (category) =>{
     console.log(category);
@@ -108,16 +110,22 @@ export default function ProductsList() {
 
           sx={{ borderRight: 1, borderColor: 'divider', display: 'flex', width: '15vw', paddingY: 8, whiteSpace: 'nowrap', paddingX: 0 }}
         >
-          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Electronics" to={'electronics'} component={Link} onClick={()=> {axiosHandler('electronics')}} {...a11yProps(0)} />
-          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Jewelery" to={'jewelary'} component={Link} onClick={()=> {axiosHandler('jewelary')}} {...a11yProps(1)} />
-          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Men's clothing" to={'mens'} component={Link} onClick={()=> {axiosHandler('mens')}} {...a11yProps(2)} />
-          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Women's clothing" to={'womens'} component={Link} onClick={()=> {axiosHandler('womens')}} {...a11yProps(3)} />
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Electronics" {...a11yProps(0)} />
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Jewelery"  {...a11yProps(1)} />
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Men's clothing"  {...a11yProps(2)} />
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Women's clothing"  {...a11yProps(3)} />
         </Tabs>
         <Container className='cardcont' maxWidth={'lg'} sx={{ marginRight: '0px !important', width: '67vw !important ' }}>
 
           {/* <TabScrollButton direction='right' orientation='vertical'/> */}
+          {/* <Cardcomp imf={shop[0].image}/> */}
+          <Cardcomp photo={Shop[0].image}/>
         </Container>
       </Box>
     </Container>
   );
 }
+// to={'electronics'} component={Link} onClick={()=> {axiosHandler('electronics')}}
+// to={'jewelary'} component={Link} onClick={()=> {axiosHandler('jewelary')}}
+// to={'mens'} component={Link} onClick={()=> {axiosHandler('mens')}}
+// to={'womens'} component={Link} onClick={()=> {axiosHandler('womens')}}

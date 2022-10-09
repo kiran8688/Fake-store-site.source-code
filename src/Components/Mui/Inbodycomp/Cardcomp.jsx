@@ -3,14 +3,14 @@ import { Button, Card, CardActionArea, CardContent, CardHeader, CardMedia, Ratin
 import Typography from '@mui/material/Typography';
 
 
-export default function Cardcomp() {
+export default function Cardcomp(props) {
   return (
 
-    <CardActionArea sx={{ height: '9vw', width: '60vw', marginY: '1vw', marginX: '0px  !Important', borderRadius: 3 }} >
+    <CardActionArea sx={{ height: '12vw', width: '60vw', marginY: '1vw', marginX: '0px  !Important', borderRadius: 3 }} >
 
-      <Card elevation={3} sx={{ height: '9vw', width: '60vw', margin: 0, backgroundColor: 'rgba(255,255,255, 0.3)', borderRadius: 3, display: '-webkit-inline-flex' }} >
+      <Card elevation={3} sx={{ height: '12vw', width: '60vw', margin: 0, backgroundColor: 'rgba(255,255,255, 0.3)', borderRadius: 3, display: '-webkit-inline-flex' }} >
         <CardMedia component={'img'}
-          image="https://source.unsplash.com/random" sx={{ borderRadius: '10px 0px 0px 10px', margin: 0, height: '170px', width: '250px', }} />
+          src={props.photo} sx={{ borderRadius: '10px 10px 10px 10px', margin: 2, height: 'auto', width: 'auto', }} />
 
 
         <CardContent sx={{marginRight:'0px !important', width: '0px !important '}}>
