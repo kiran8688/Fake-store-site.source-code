@@ -3,7 +3,34 @@ import { Box, Paper, Container, Typography, Card, CardHeader, CardMedia, CardAct
 import { display } from '@mui/system'
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 export default function ProductDetails(props) {
+
+   
+    const {id} = useParams()
+
+
+//     const [product, setProduct] = useState([]);
+//   useEffect(() => {
+//     //  let cat = category != null ? category : ''
+//     axios
+//     .get(`https://fakestoreapi.com/${props.root}${id}`)
+//     .then((res) => {
+      
+//       // var parameter = window.URL+`${param}`
+      
+//       setProduct(res.data)
+//       // console.log(setShop);
+      
+//       console.log(res.data);
+//       console.log(props.root);
+      
+//     })
+//   }, [id])
+
+
     return (
         <Container maxWidth={'xl'}>
             <Box>

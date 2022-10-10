@@ -15,7 +15,7 @@ import { Container } from "@mui/system";
 // import SensorOccupiedTwoToneIcon from '@mui/icons-material/SensorOccupiedTwoTone';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-// import { Link, Outlet } from "react-router-dom";
+import { Link} from "react-router-dom";
 // import { Paper } from "@mui/material";
 // import { makeStyles } from "@mui/material";
 // import IconButton from '@mui/material/IconButton';
@@ -39,12 +39,18 @@ export default function Bar(props) {
           <Toolbar>
             <Typography variant="h5" component="div" sx={{ flexGrow: 1, marginTop: 2 }}>Fake-Shopping Site</Typography>
             <Tabs value={value} onChange={handleChange} sx={{ backgroundColor: 'rgba(255, 255, 255, 0)', marginTop: 2, color: 'rgba(128, 128, 128)' }} centered>
-              <Tab label="Home" sx={{  '&:hover': { color: 'rgb(0,0,0)' }, paddingX: 3, borderRadius: 5 }} /> 
-              <Tab label="Products" sx={{  '&:hover': { color: 'rgb(0,0,0)' }, paddingX: 3, borderRadius: 5 }}  /> 
-              <Tab label="Profile" sx={{  '&:hover': { color: 'rgb(0,0,0)' }, paddingX: 3, borderRadius: 5 }} /> 
-              <Tab label="Contact Us" sx={{  '&:hover': { color: 'rgb(0,0,0)' }, paddingX: 3, borderRadius: 5 }} /> 
-              <Tab label="Login" sx={{  '&:hover': { color: 'rgb(0,0,0)' }, paddingX: 3, borderRadius: 5 }} /> 
-              <Tab label="Sign Up" sx={{  '&:hover': { color: 'rgb(0,0,0)' }, paddingX: 3, borderRadius: 5 }} /> 
+
+              <Tab label="Home" sx={{  '&:hover': { color: 'rgb(0,0,0)' }, paddingX: 3, borderRadius: 5 }}  to={'/'} component={Link} /> 
+
+              <Tab label="Products" sx={{  '&:hover': { color: 'rgb(0,0,0)' }, paddingX: 3, borderRadius: 5 }}  to={'/products/all'}  component={Link }  /> 
+
+              <Tab label="Profile" sx={{  '&:hover': { color: 'rgb(0,0,0)' }, paddingX: 3, borderRadius: 5 }} to={'/profile'} component={Link } /> 
+
+              <Tab label="Contact Us" sx={{  '&:hover': { color: 'rgb(0,0,0)' }, paddingX: 3, borderRadius: 5 }} to={'/contact'} component={Link} /> 
+
+              <Tab label="Login" sx={{  '&:hover': { color: 'rgb(0,0,0)' }, paddingX: 3, borderRadius: 5 }}  to={'/login'} component={Link } /> 
+
+              <Tab label="Sign Up" sx={{  '&:hover': { color: 'rgb(0,0,0)' }, paddingX: 3, borderRadius: 5 }} to={'/signup'} component={Link } /> 
             </Tabs>
           </Toolbar>
         </Container>
@@ -55,12 +61,6 @@ export default function Bar(props) {
 }
 
 
-// to={'/'} component={Link}
-// to={'/categories'}  component={Link }
-// to={'/profile'} component={Link }
-// to={'/contact'} component={Link}
-// to={'/login'} component={Link }
-// to={'/signup'} component={Link }
 
 
 // {/* <Button color="inherit" sx={{ '&:hover': { backgroundColor: "#c6b279", color: "#830a2c" } }} startIcon={<HomeTwoTone />}  > Home </Button>

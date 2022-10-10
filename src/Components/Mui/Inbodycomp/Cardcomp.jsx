@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { Button, Card, CardActionArea, CardContent, CardHeader, CardMedia, Rating } from '@mui/material';
+import { Button, Card, CardActionArea, CardContent, CardHeader, CardMedia, Rating, Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
+import ProductDetails from './ProductDetails';
+import { Link } from 'react-router-dom';
 
 
 export default function Cardcomp(props) {
@@ -11,24 +13,26 @@ export default function Cardcomp(props) {
 // var ratingSplit = rating.split('.')
 // var pick = ratingSplit.length==undefined ? 0 :ratingSplit[1] 
 // var strtonum = pick== undefined ? 0 : parseInt(pick)
-// // var conv =  (strtonum===NaN) ? 0: strtonum
-// console.log(strtonum);
+// var mulnum =  strtonum > 0 ? (strtonum/10): parseFloat(0.1)
+// // // var conv =  (strtonum===NaN) ? 0: strtonum
+// console.log(mulnum);
 
 
   return (
 
-    <CardActionArea sx={{ height: '12vw', width: '60vw', marginY: '1vw', marginX: '0px  !Important', borderRadius: 3 }} >
+    <CardActionArea sx={{ height: '12vw', width: '60vw', marginY: '1vw', marginX: '0px  !Important', borderRadius: 3 }} onClick={props.onClick} face={props.key}  root={props.param} to={`/products/${props.key}`} component={Link} >
 
-      <Card elevation={3} sx={{ height: '12vw', width: '60vw', margin: 0, backgroundColor: 'rgba(255,255,255, 0.3)', borderRadius: 3, display: '-webkit-inline-flex' }} >
-        <CardMedia component={'img'}
-          src={props.img} sx={{ borderRadius: '10px 10px 10px 10px', margin: 2, height: 'auto', width: 'auto', }} />
+      <Card elevation={3}  sx={{ height: '12vw', width: '60vw', margin: 0, backgroundColor: 'rgba(255,255,255, 0.3)', borderRadius: 3, display: '-webkit-inline-flex' }} >
+        <CardMedia component={'img'} 
+          src={props.img} sx={{ borderRadius: '8px 8px 8px 8px', margin: '16px 16px 16px 20px', height: 'auto', boxShadow: 24 ,width: 'auto', backgroundColor: 'rgba(255,255,255, 0.3)' }} />
 
 
-        <CardContent sx={{marginRight:'0px !important', width: '0px !important '}}>
+        <CardContent sx={{marginRight:'0px !important',  width: '0px !important '}}>
 
-          <CardHeader sx={{ width: '45vw', paddingY: 1, paddingRight: '0px !Important' }} title={props.name} subheader='hello sub' />
-          <Typography variant='h5' sx={{ marginX: 2 }} component={'span'} >${props.price}</Typography><br />
-          <Typography variant='subtitle1' component={'span'}> <Rating readOnly value={props.ratingStar} precision={props.ratingacc} /> </Typography>
+          <CardHeader sx={{ width: '40vw', paddingTop: 1, paddingBottom: 1 }} title={props.name} subheader={props.cat} />
+          
+          <Typography variant='subtitle1' component={'div'} sx={{paddingX:1.5, whiteSpace: 'nowrap', color:'rgba(0,0,0,0.5)' }}> <Rating readOnly component={'div'} sx={{textAlign:'centre',}} value={props.ratingStar}   /> {props.ratingCount}k ratings </Typography>
+          <Typography variant='h6' sx={{ marginX: 2 }} component={'Box'} >${props.price}</Typography>
         </CardContent>
       </Card>
     </CardActionArea>

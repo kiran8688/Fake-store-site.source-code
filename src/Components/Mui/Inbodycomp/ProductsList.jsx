@@ -8,7 +8,9 @@ import Box from '@mui/material/Box';
 import Cardcomp from './Cardcomp';
 import { Container, TabScrollButton } from '@mui/material';
 import axios from 'axios';
-// import { json, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Foot from '../Foot';
+import { useRef } from 'react';
 // import Electronics from './Electronics';
 // import Jewelery from './Jewelary';
 // import Mens from './Mens';
@@ -59,73 +61,85 @@ export default function ProductsList() {
 
   // -----------------------------------------------API call (axios)------------------------------------------------------------------------------------
 
-const [param, setParam] = useState('products/')
-
+  
+  const [param, setParam] = useState('products/')
+  
+  const [prevurl, setPrevUrl] = useState(``)
+  
   const [Shop, setShop] = useState([]);
+  
   useEffect(() => {
     //  let cat = category != null ? category : ''
+    var purl = `https://fakestoreapi.com/${prevurl}`
+    console.log(purl);
+    var url = `https://fakestoreapi.com/${param}`
     axios
-    .get(`https://fakestoreapi.com/${param}`)
+    .get(url)
     .then((res) => {
-
+      
+      // var parameter = window.URL+`${param}`
+      
       setShop(res.data)
       // console.log(setShop);
-
+      
       console.log(res.data);
-
+      
     })
-  }, [param])
+  }, [param, prevurl])
+  
+  
+  
+  const productHandler = (i) =>{
+    // console.log(e.target.value)
+    //  var proUrl= u+i
+    setParam('products/'+i)
+    // setPrevUrl(u)
+    // console.log('products/'+i);
+  
+}
+
+const catHandler = (catUrl) =>{
+  setParam(catUrl)
+  setPrevUrl(catUrl)
+  // console.log(prevurl);
+}
 
 
 
-  var cardrender = Shop.map((product, index) =>{
 
+  var cardrender 
+  
+  cardrender= Shop.map((product, index) =>{
 
+    var rating = parseFloat(Shop[index].rating.rate)
+    var confloat = (rating).toString()
+    var ratingSplit = confloat.split('')
 
+    var strtoNum = (parseFloat(ratingSplit[ratingSplit.length-1])/2)
+    console.log(strtoNum)
 
-    return(
-      <Cardcomp 
-      key= {Shop[index].id}
-      name = {Shop[index].title}
-      price = {Shop[index].price}
-      details = {Shop[index].description}
-      cat = {Shop[index].category}
-      img = {Shop[index].image}
-      ratingStar = {Shop[index].rating.rate}
-      ratingacc = {Shop[index].rating.rate}
-      ratingCount = {Shop[index].rating.count}
-
-      />
+  
+  return(
+    <Cardcomp 
+    key= {Shop[index].id}
+    parameter={param}
+    name = {Shop[index].title}
+    price = {Shop[index].price}
+    details = {Shop[index].description}
+    cat = {Shop[index].category}
+    img = {Shop[index].image}
+    ratingStar = {Shop[index].rating.rate}
+    ratingacc = {strtoNum}
+    ratingCount = {Shop[index].rating.count}
+    onClick={()=>{ productHandler(product.id)}}
+    
+    />
     )
-   
-
-
+    
   })
-
-
-
-//   const axiosHandler = (category) =>{
-//     console.log(category);
-//     setParam(category)
-//     console.log(setParam);
-// }
-
-  //   const [mystate, setMyState] = useState([])
-  //   const [anError, setAnError] = useState('')
-
-  //   const getApi= async () =>{ 
-
-  //       const res = await axios.get(`https://fakestoreapi.com//products`)
-  //       .then(res=> res.json())
-  //       .then(json=> console.log(json))
-  //       setMyState(res.data)
-
-  // };
-  // useEffect(() =>{
-  //   getApi()
-  // }, [])
-
+  
   return (
+
     <Container maxWidth={'xl'}>
 
       <Box
@@ -137,15 +151,17 @@ const [param, setParam] = useState('products/')
           value={value}
           onChange={handleChange}
           aria-label="Vertical tabs example"
-
-
-
+          
           sx={{ borderRight: 1, borderColor: 'divider', display: 'flex', width: '15vw', paddingY: 8, whiteSpace: 'nowrap', paddingX: 0 }}
-        >
-          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Electronics" onClick={()=> {setParam('products/category/electronics')}} {...a11yProps(0)} />
-          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Jewelery" onClick={()=> {setParam('products/category/jewelery')}} {...a11yProps(1)} />
-          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Men's clothing" onClick={()=> {setParam("products/category/men's%20clothing")}} {...a11yProps(2)} />
-          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Women's clothing" onClick={()=> {setParam("products/category/women's%20clothing")}} {...a11yProps(3)} />
+          >
+           
+
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="All Products" onClick={()=> {catHandler('products/')}} to={'/products/all'} component={Link} {...a11yProps(0)}  />
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Electronics" onClick={()=> {catHandler('products/category/electronics')}} to={'/products/electronics'} component={Link} {...a11yProps(1)}  />
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Jewelery" onClick={()=> {catHandler('products/category/jewelery')}} to={'/products/jewelery'} component={Link} {...a11yProps(2)} />
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Men's clothing" onClick={()=> {catHandler("products/category/men's%20clothing")}} to={'/products/mens'} component={Link} {...a11yProps(3)} />
+          <Tab sx={{ paddingY: 5, marginX: 0, fontSize: 18 }} label="Women's clothing" onClick={()=> {catHandler("products/category/women's%20clothing")}} to={'/products/womens'} component={Link} {...a11yProps(4)} />
+          
         </Tabs>
         <Container className='cardcont' maxWidth={'lg'} sx={{ marginRight: '0px !important', width: '67vw !important ' }}>
 
@@ -158,7 +174,41 @@ const [param, setParam] = useState('products/')
     </Container>
   );
 }
-// to={'electronics'} component={Link} 
+
 // to={'jewelary'} component={Link} 
 // to={'mens'} component={Link} 
 // to={'womens'} component={Link} 
+
+
+
+//   const axiosHandler = (category) =>{
+  //     console.log(category);
+  //     setParam(category)
+  //     console.log(setParam);
+  // }
+  
+  //   const [mystate, setMyState] = useState([])
+  //   const [anError, setAnError] = useState('')
+  
+  //   const getApi= async () =>{ 
+    
+    //       const res = await axios.get(`https://fakestoreapi.com//products`)
+    //       .then(res=> res.json())
+    //       .then(json=> console.log(json))
+    //       setMyState(res.data)
+    
+    // };
+    // useEffect(() =>{
+      //   getApi()
+      // }, [])
+      
+
+
+
+      // var pick = ratingSplit.length==undefined ? 0 :ratingSplit[1] 
+      // var strtonum = pick== undefined ? 0 : parseInt(pick)
+      // var mulnum =  strtonum > 0 ? (strtonum /10): 0.1
+      // console.log(mulnum);
+      // // var conv =  (strtonum===NaN) ? 0: strtonum
+      
+      // to={'electronics'} component={Link} 

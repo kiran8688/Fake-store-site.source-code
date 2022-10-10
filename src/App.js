@@ -9,7 +9,7 @@ import ContactUs from './Components/Mui/Inbodycomp/ContactUs';
 import Login from './Components/Mui/Inbodycomp/Login';
 import SignUp from './Components/Mui/Inbodycomp/SignUp';
 import Foot from './Components/Mui/Foot';
-// import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Electronics from './Components/Mui/Inbodycomp/Electronics';
 import Jewelary from './Components/Mui/Inbodycomp/Jewelary';
 import Mens from './Components/Mui/Inbodycomp/Mens';
@@ -23,28 +23,36 @@ export default function App() {
         <Box id='bgcol'>
 
           <Bar />
-          {/* <Routes> */}
+          <Routes>
 
 
-          {/* <Route path='/' element={<Welcome/> }/>   */}
-          {/* </Routes> */}
+          <Route path='/' element={<Welcome/> }/>  
+          </Routes>
           
           <Container maxWidth="xl" >
 
-            <ProductsList/>
+            <Routes>
+            {/* <Route path='/products' element = {<ProductsList/>}/> */}
+            <Route path='/products/all' element={<ProductsList/>}/>
+            <Route path='/products/electronics' element={<ProductsList/>}/>
+            <Route path='/products/jewelery' element={<ProductsList/>}/>
+            <Route path='/products/mens' element={<ProductsList/>}/>
+            <Route path='/products/womens' element={<ProductsList/>}/>
+            <Route path = '/products/:id' element={<ProductDetails/>}/>
+            </Routes>
             
-{/* <Routes> */}
+          <Routes>
             {/* <Route path='/categories' element={<ProductsList/>}/> */}
             {/* <Route path='/product' element={ <ProductDetails /> }/> */}
-            {/* <Route path='/profile' element={ <Profile/> }/> */}
-            {/* <Route path='/contact' element={ <ContactUs/> }/> */}
-          {/* </Routes> */}
+            <Route path='/profile' element={ <Profile/> }/>
+            <Route path='/contact' element={ <ContactUs/> }/>
+          </Routes>
           </Container>
-          {/* <Routes> */}
+          <Routes>
 
-          {/* <Route path='/login' element={ <Login/>} /> */}
-          {/* <Route path='/signup' element={<SignUp/> }/> */}
-          {/* </Routes> */}
+          <Route path='/login' element={ <Login/>} />
+          <Route path='/signup' element={<SignUp/> }/>
+          </Routes>
             <Foot/>
         </Box>
       </Box>

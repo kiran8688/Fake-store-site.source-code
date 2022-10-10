@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 // import Link from '@mui/material/Link';
+
 import FacebookTwoToneIcon from '@mui/icons-material/FacebookTwoTone';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -16,7 +17,8 @@ import LocalPhoneTwoToneIcon from '@mui/icons-material/LocalPhoneTwoTone';
 import HelpCenterTwoToneIcon from '@mui/icons-material/HelpCenterTwoTone';
 import { Stack, IconButton } from '@mui/material'
 
-// import { Link, Route, Routes, BrowserRouter, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import ProductsList from './Inbodycomp/ProductsList';
 
 function Copyright() {
     return (
@@ -31,7 +33,12 @@ function Copyright() {
     );
 }
 
-export default function Foot() {
+export default function Foot(props) {
+
+
+
+
+
     return (
         <Box
             sx={{
@@ -127,10 +134,10 @@ export default function Foot() {
 
                                     <Typography variant='subtitle1' component={'div'} sx={{ lineHeight: 2.5, fontSize: 17, whiteSpace: 'nowrap' }} >
 
-                                        {/* <Link className='anchver' href='#' component={Link} >Electronics</Link><br />
-                                        <Link className='anchver' href='#' component={Link} >Jewelery</Link><br />
-                                        <Link className='anchver' href='#' component={Link} >Men's clothings</Link><br />
-                                        <Link className='anchver' href='#' component={Link} >Women's clothing</Link> */}
+                                        <Link className='anchver' to={'/products/electronics'}  component={Link} >Electronics</Link><br />
+                                        <Link className='anchver' to={'/products/jewelery'} component={Link} >Jewelery</Link><br />
+                                        <Link className='anchver' to={'/products/mens'} component={Link} >Men's clothings</Link><br />
+                                        <Link className='anchver' to={'/products/womens'} component={Link} >Women's clothing</Link>
                                     </Typography>
 
                                 </Grid>
@@ -141,10 +148,10 @@ export default function Foot() {
                                     <Typography variant='subtitle1' component={'div'} sx={{ color: 'rgb(255,0,0)' }}>___________ </Typography>
 
                                     <Typography variant='subtitle1' component={'div'} sx={{ lineHeight: 2.5, fontSize: 17, whiteSpace: 'nowrap' }}>
-                                        {/* <Link className='anchver' to={'/profile'} component={Link} >Your Account</Link><br />
+                                        <Link className='anchver' to={'/profile'} component={Link} >Your Account</Link><br />
                                         <Link className='anchver' to={'/login'} component={Link} >Login</Link><br />
                                         <Link className='anchver' to={'/signup'} component={Link} >Sign Up</Link><br />
-                                        <Link className='anchver' href='#' component={'a'} > API</Link> */}
+                                        <Link className='anchver' href='#' component={'a'} > API</Link>
                                     </Typography>
 
                                 </Grid>
@@ -163,7 +170,7 @@ export default function Foot() {
                                         <Button variant='text' color='inherit' size='l' disableElevation disableRipple startIcon={<LocalPhoneTwoToneIcon color='warning' fontSize='large' />}>
                                             +91 8099951768
                                         </Button><br />
-                                        <Button variant='text' color='inherit' size='l' disableElevation disableRipple startIcon={<HelpCenterTwoToneIcon color='warning' fontSize='large' />}>
+                                        <Button variant='text' color='inherit' size='l' disableElevation disableRipple startIcon={<HelpCenterTwoToneIcon color='warning' fontSize='large' />} to={'/contact'} component={Link}>
                                             Contact Us
                                         </Button>
                                     </Typography>
@@ -183,4 +190,3 @@ export default function Foot() {
         </Box>
     );
 }
-// to={'/contact'} component={NavLink}
