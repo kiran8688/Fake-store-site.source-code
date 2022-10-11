@@ -1,12 +1,36 @@
 import * as React from 'react';
 import { Button, Card, CardActionArea, CardContent, CardHeader, CardMedia, Rating, Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import ProductDetails from './ProductDetails';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 
 export default function Cardcomp(props) {
 
+
+
+
+// const [myState, setMyState] = useState('')
+// // console.log(myState);
+// const [proShop, setProShop] = useState({})
+// useEffect(() =>{
+//   setMyState(props.id)
+//   // console.log(myState);
+
+//   axios
+//     .get(`https://fakestoreapi.com/products/${myState}`)
+//     .then((res) => {
+      
+//       // var parameter = window.URL+`${param}`
+      
+//       setProShop(res.data)
+// console.log(proShop);
+
+// })
+
+// })
 
 //   var rating = props.ratingacc.toString()
 //   // console.log(typeof(rating));
@@ -20,7 +44,7 @@ export default function Cardcomp(props) {
 
   return (
 
-    <CardActionArea sx={{ height: '12vw', width: '60vw', marginY: '1vw', marginX: '0px  !Important', borderRadius: 3 }} onClick={props.onClick} face={props.key}  root={props.param} to={`/products/${props.key}`} component={Link} >
+    <CardActionArea sx={{ height: '12vw', width: '60vw', marginY: '1vw', marginX: '0px  !Important', borderRadius: 3 }}  onClick={() =>{props.paramHandler(props.id)}} face={props.key}  root={props.param} to={`/products/${props.id}`} component={Link} >
 
       <Card elevation={3}  sx={{ height: '12vw', width: '60vw', margin: 0, backgroundColor: 'rgba(255,255,255, 0.3)', borderRadius: 3, display: '-webkit-inline-flex' }} >
         <CardMedia component={'img'} 

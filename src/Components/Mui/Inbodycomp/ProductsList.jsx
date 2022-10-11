@@ -71,7 +71,7 @@ export default function ProductsList() {
   useEffect(() => {
     //  let cat = category != null ? category : ''
     var purl = `https://fakestoreapi.com/${prevurl}`
-    console.log(purl);
+    // console.log(purl);
     var url = `https://fakestoreapi.com/${param}`
     axios
     .get(url)
@@ -80,23 +80,36 @@ export default function ProductsList() {
       // var parameter = window.URL+`${param}`
       
       setShop(res.data)
-      // console.log(setShop);
+      console.log(Shop);
       
-      console.log(res.data);
-      
+      // console.log(res.data);
     })
+      return  () =>{
+
+        // var purl = `https://fakestoreapi.com/${prevurl}`
+        // console.log(purl);
+        // var url = `https://fakestoreapi.com/${param}`
+        axios
+        .get(url)
+        .then((res) => {
+    
+        // setShop(res.data)
+
+        })
+      }
+      
   }, [param, prevurl])
   
   
   
-  const productHandler = (i) =>{
-    // console.log(e.target.value)
-    //  var proUrl= u+i
-    setParam('products/'+i)
-    // setPrevUrl(u)
-    // console.log('products/'+i);
+//   const productHandler = (i) =>{
+//     // console.log(e.target.value)
+//     //  var proUrl= u+i
+//     // setParam('products/'+i)
+//     // setPrevUrl(u)
+//     // console.log('products/'+i);
   
-}
+// }
 
 const catHandler = (catUrl) =>{
   setParam(catUrl)
@@ -116,12 +129,12 @@ const catHandler = (catUrl) =>{
     var ratingSplit = confloat.split('')
 
     var strtoNum = (parseFloat(ratingSplit[ratingSplit.length-1])/2)
-    console.log(strtoNum)
 
   
   return(
     <Cardcomp 
-    key= {Shop[index].id}
+    key= {Shop[index]}
+    id = {product.id}
     parameter={param}
     name = {Shop[index].title}
     price = {Shop[index].price}
@@ -131,12 +144,13 @@ const catHandler = (catUrl) =>{
     ratingStar = {Shop[index].rating.rate}
     ratingacc = {strtoNum}
     ratingCount = {Shop[index].rating.count}
-    onClick={()=>{ productHandler(product.id)}}
+    // Click={()=>{ productHandler(product.id)}}
     
     />
     )
     
   })
+  
   
   return (
 

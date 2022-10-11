@@ -56,7 +56,7 @@ export default function Foot(props) {
                     mt: 'auto',
                     backgroundColor: 'rgba(255,255,255, 1)',
                     color: 'rgba(0,0,0,0.6)',
-                    height: '45vh '
+                    height: '47vh '
 
                     //   backgroundColor: (theme) =>
                     //     theme.palette.mode === 'light'
