@@ -44,7 +44,7 @@ export default function Cardcomp(props) {
 
   return (
 
-    <CardActionArea sx={{ height: '12vw', width: '60vw', marginY: '1vw', marginX: '0px  !Important', borderRadius: 3 }}  onClick={() =>{props.paramHandler(props.id)}} face={props.key}  root={props.param} to={`/products/${props.id}`} component={Link} >
+    <CardActionArea sx={{ height: '12vw', width: '60vw', marginY: '1vw', marginX: '0px  !Important', borderRadius: 3 }}   face={props.key} to={`/products/${props.id}`} component={Link} >
 
       <Card elevation={3}  sx={{ height: '12vw', width: '60vw', margin: 0, backgroundColor: 'rgba(255,255,255, 0.3)', borderRadius: 3, display: '-webkit-inline-flex' }} >
         <CardMedia component={'img'} 

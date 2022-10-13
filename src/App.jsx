@@ -10,10 +10,8 @@ import Login from './Components/Mui/Inbodycomp/Login';
 import SignUp from './Components/Mui/Inbodycomp/SignUp';
 import Foot from './Components/Mui/Foot';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Electronics from './Components/Mui/Inbodycomp/Electronics';
-import Jewelary from './Components/Mui/Inbodycomp/Jewelary';
-import Mens from './Components/Mui/Inbodycomp/Mens';
-import Womens from './Components/Mui/Inbodycomp/Womens';
+import Notfound from './Components/Mui/Inbodycomp/Notfound';
+
 
 export default function App() {
   return (
@@ -40,6 +38,10 @@ export default function App() {
             <Route path='/products/womens' element={<ProductsList/>}/>
             <Route path = '/products/:id' element={<ProductDetails/>}/>
             </Routes>
+            {/* <Routes>
+
+            <Route path='*' element={<Notfound/>}/>
+            </Routes> */}
             
           <Routes>
             {/* <Route path='/categories' element={<ProductsList/>}/> */}
