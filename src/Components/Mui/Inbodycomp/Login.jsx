@@ -48,7 +48,7 @@ export default function Login() {
                     sm={4}
                     md={7}
                     sx={{
-                        backgroundImage: 'url(https://images.pexels.com/photos/9726015/pexels-photo-9726015.jpeg)',
+                        backgroundImage: 'url(https://images.pexels.com/photos/301930/pexels-photo-301930.jpeg)',
                         backgroundRepeat: 'no-repeat',
                         backgroundColor: (t) =>
                             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],

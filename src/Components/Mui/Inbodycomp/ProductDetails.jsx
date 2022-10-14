@@ -32,7 +32,10 @@ export default function ProductDetails(props) {
     }
 
     useEffect(() => {
+
         let pUrl = `https://fakestoreapi.com/products/${productId}`
+        let pId = productId >= 0 ? 
+
         //     //  let cat = category != null ? category : ''
         axios
             .get(pUrl)
@@ -47,7 +50,7 @@ export default function ProductDetails(props) {
                 //       console.log(res.data);
                 //       console.log(props.root);
 
-            })
+            }): navigate('/*')
     }, [])
 
 
@@ -84,7 +87,7 @@ export default function ProductDetails(props) {
 
 
                                     <Typography variant='h4' component={'div'} sx={{marginX:10}} gutterBottom>
-                                       $ {pDetails.price}
+                                       $ {pDetails.price} USD
                                     </Typography>
 
 

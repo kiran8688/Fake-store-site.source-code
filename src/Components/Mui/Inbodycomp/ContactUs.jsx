@@ -11,7 +11,7 @@ export default function ContactUs() {
                     <Card sx={{ height: '47vw', backgroundColor: 'rgba(255,255,255, 0.7)', borderRadius: '20px 20px 20px 20px', textAlign: 'center', }}>
 
                         <Container maxWidth={'sm'}>
-                            <Box>
+                            <Box >
                             <Typography variant='h6' component={'div'} sx={{ marginY: 10 }}>
 
                                 Got a  Question? We'd love to hear from you. Send us a message and we'll response as soon as possible.
@@ -41,6 +41,7 @@ export default function ContactUs() {
                                     label='Your Question'
                                     aria-label="maximum height"
                                     placeholder=" Message(optional) Minimum 20 words"
+                                    className='prodcont'
                                     
                                     style={{ height: '10vw' ,width: '29vw', marginTop: '3vw', backgroundColor:'rgba(255, 255, 255, 0)', fontSize: 20}}
                                 />

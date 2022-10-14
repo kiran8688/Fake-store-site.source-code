@@ -17,7 +17,7 @@ import LocalPhoneTwoToneIcon from '@mui/icons-material/LocalPhoneTwoTone';
 import HelpCenterTwoToneIcon from '@mui/icons-material/HelpCenterTwoTone';
 import { Stack, IconButton } from '@mui/material'
 
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import ProductsList from './Inbodycomp/ProductsList';
 
 function Copyright() {
@@ -187,6 +187,7 @@ export default function Foot(props) {
                     <Copyright />
                 </Container>
             </Box>
+            <Outlet/>
         </Box>
     );
 }

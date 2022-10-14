@@ -31,17 +31,17 @@ export default function App() {
 
             <Routes>
             {/* <Route path='/products' element = {<ProductsList/>}/> */}
-            <Route path='/products/all' element={<ProductsList/>}/>
-            <Route path='/products/electronics' element={<ProductsList/>}/>
-            <Route path='/products/jewelery' element={<ProductsList/>}/>
-            <Route path='/products/mens' element={<ProductsList/>}/>
-            <Route path='/products/womens' element={<ProductsList/>}/>
+            <Route path='/products' element={<ProductsList/>}>
+              <Route path='all' index element={<ProductsList/>}/>
+            <Route path='electronics' element={<ProductsList/>}/>
+            <Route path='jewelery' element={<ProductsList/>}/>
+            <Route path='mens' element={<ProductsList/>}/>
+            <Route path='womens' element={<ProductsList/>}/>
+            <Route path='*' element={<Notfound/>}/>
+            </Route>
             <Route path = '/products/:id' element={<ProductDetails/>}/>
             </Routes>
-            {/* <Routes>
-
-            <Route path='*' element={<Notfound/>}/>
-            </Routes> */}
+            
             
           <Routes>
             {/* <Route path='/categories' element={<ProductsList/>}/> */}

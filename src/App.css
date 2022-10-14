@@ -41,22 +41,22 @@
 }
 
 #contain {
-    background-image: url(https://images.pexels.com/photos/9726015/pexels-photo-9726015.jpeg);
-    /* https://images.pexels.com/photos/301930/pexels-photo-301930.jpeg */
-    /* https://images.pexels.com/photos/4027948/pexels-photo-4027948.jpeg */
-    /* https://images.pexels.com/photos/6758281/pexels-photo-6758281.jpeg */
-    /* https://images.pexels.com/photos/11395484/pexels-photo-11395484.jpeg */
-    /* https://images.pexels.com/photos/7912829/pexels-photo-7912829.jpeg */
-    /* https://images.pexels.com/photos/2954412/pexels-photo-2954412.jpeg */
-    /* https://images.pexels.com/photos/2781582/pexels-photo-2781582.jpeg */
-    /* https://images.pexels.com/photos/3937645/pexels-photo-3937645.jpeg */
-    /* https://images.pexels.com/photos/2070026/pexels-photo-2070026.jpeg */
-    /* https://images.pexels.com/photos/5356273/pexels-photo-5356273.jpeg */
-    /* https://images.pexels.com/photos/6600511/pexels-photo-6600511.jpeg */
-    /* https://images.pexels.com/photos/9726015/pexels-photo-9726015.jpeg */
+    /* background-image: url(https://images.pexels.com/photos/9726015/pexels-photo-9726015.jpeg); */
+    /* background-image: url(https://images.pexels.com/photos/301930/pexels-photo-301930.jpeg); */
+/* background-image: url(https://images.pexels.com/photos/4027948/pexels-photo-4027948.jpeg); */
+    /* background-image: url(https://images.pexels.com/photos/6758281/pexels-photo-6758281.jpeg); */
+    /* background-image: url(https://images.pexels.com/photos/11395484/pexels-photo-11395484.jpeg); */
+    /* background-image: url(https://images.pexels.com/photos/7912829/pexels-photo-7912829.jpeg); */
+    /* background-image: url(https://images.pexels.com/photos/2954412/pexels-photo-2954412.jpeg); */
+    /* background-image: url(https://images.pexels.com/photos/2781582/pexels-photo-2781582.jpeg); */
+    /* background-image: url(https://images.pexels.com/photos/3937645/pexels-photo-3937645.jpeg); */
+    background-image: url(https://images.pexels.com/photos/2070026/pexels-photo-2070026.jpeg);
+    /* background-image: url(https://images.pexels.com/photos/5356273/pexels-photo-5356273.jpeg); */
+    /* background-image: url(https://images.pexels.com/photos/6600511/pexels-photo-6600511.jpeg); */
+    /* background-image: url(https://images.pexels.com/photos/9726015/pexels-photo-9726015.jpeg); */
     background-repeat: inherit;
     background-size: cover;
-    height: auto;
+    /* height: auto; */
     /* position: fixed; */
     /* width: 100vw; */
     /* bottom: 10%; */
@@ -146,13 +146,13 @@ html::-webkit-scrollbar-track:hover {
 }
 
 .cardcont::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.6);
 
 
 }
 
 .cardcont::-webkit-scrollbar-track:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0);
 
 }
 
@@ -214,6 +214,6 @@ html::-webkit-scrollbar-track:hover {
 }
 
 .prodcont::-webkit-scrollbar-track:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0);
 
 }

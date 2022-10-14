@@ -15,7 +15,7 @@ import { Container } from "@mui/system";
 // import SensorOccupiedTwoToneIcon from '@mui/icons-material/SensorOccupiedTwoTone';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import { Link} from "react-router-dom";
+import { Link, Outlet} from "react-router-dom";
 // import { Paper } from "@mui/material";
 // import { makeStyles } from "@mui/material";
 // import IconButton from '@mui/material/IconButton';
@@ -55,7 +55,7 @@ export default function Bar(props) {
           </Toolbar>
         </Container>
       </AppBar>
-      {/* <Outlet/> */}
+      <Outlet/>
     </Box>
   );
 }

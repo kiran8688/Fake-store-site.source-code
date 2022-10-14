@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Paper, Container, Button, Card, Typography, } from '@mui/material'
-import { HomeMaxTwoTone } from '@mui/icons-material'
+import { HomeTwoTone } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
 
@@ -8,10 +8,10 @@ const Notfound = () => {
   return (
 
     <Container maxWidth={'xl'}>
-        <Box sx={{ margin:50, color: 'white',}}>
+        <Box sx={{ height: '100vh', margin:50, color: 'white',}}>
             <Typography  variant='h4' component={'div'}  >
                 Wow Such An Empty 
-                <Button endIcon={<HomeMaxTwoTone/>} sx={{marginX:10}} variant='contained' elevation={5} color={'warning'} to={<Navigate to='/'/>} component={Link} >
+                <Button endIcon={<HomeTwoTone/>} sx={{marginX:10}} variant='contained' elevation={5} color={'warning'} to={'/'} component={Link} >
                     Back to Home
                 </Button>
             </Typography>
@@ -21,7 +21,7 @@ const Notfound = () => {
   )
 }
 
-export default Notfound
+export default Notfound;
     // <Container maxWidth={'xl'}>
     //         <Box>
     //             <Paper elevation={10} sx={{ height: '50vw', backgroundColor: 'rgba(145, 145, 145, 0.7)', borderRadius: '20px 20px 20px 20px', marginTop:3 }}>
